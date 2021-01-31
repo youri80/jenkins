@@ -29,12 +29,12 @@ pipeline {
         
         stage('test') {
             steps {
-             echo "I am master branch"
+             echo "$env.BRANCH_NAME"
             }
 
-            when {
+           /* when {
             branch 'master'
-            }
+            }*/
         }
 
     }
