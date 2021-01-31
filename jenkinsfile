@@ -14,7 +14,7 @@ pipeline {
         stage('Example') {
             steps {
                 script {
-                    echo env.BRANCH_NAME
+                    echo scm.branches[0].name
                          if (env.BRANCH_NAME == 'master') {
                                     echo 'I only execute on the master branch'
                                 } else {
