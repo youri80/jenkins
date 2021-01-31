@@ -26,6 +26,16 @@ pipeline {
             
         }
 
-       
+        
+        stage('test') {
+            steps {
+             echo "I am master branch"
+            }
+
+            when {
+            branch 'master'
+            }
+        }
+
     }
 }
