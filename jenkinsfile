@@ -1,9 +1,15 @@
 node {
-    stage('Example') {
-        if (env.BRANCH_NAME == 'master') {
-            echo 'I only execute on the master branch'
-        } else {
-            echo 'I execute elsewhere'
+
+    parameters {
+        choice(name: 'VERSION', choices: ['1.1','1.2','1.3'])
+    }
+    stages {
+        stage('Example') {
+            if (env.BRANCH_NAME == 'master') {
+                echo 'I only execute on the master branch'
+            } else {
+                echo 'I execute elsewhere'
+            }
         }
     }
 }
