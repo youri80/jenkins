@@ -13,11 +13,14 @@ pipeline {
         }
         stage('Example') {
             steps {
-                    if (params.BRANCH_NAME == 'master') {
+                script {
+                         if (params.BRANCH_NAME == 'master') {
                                     echo 'I only execute on the master branch'
                                 } else {
                                     echo 'I execute elsewhere'
                                 }
+                }
+                   
             }
             
         }
